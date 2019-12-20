@@ -14,4 +14,14 @@ Search for a particular string in all the git repos under the current directory:
 find . -name .git -type d -prune -exec bash -c "cd '{}/..' && pwd && git grep search_string \$(git rev-list --all)" \;
 ```
 
+Delete old openshift istag values:
+
+```
+oc get istag --selector=app==app-name
+oc get istag | grep imagestream_name
+oc get istag --selector=app==app-name | cut -f 1 -d ' ' | sort
+oc get istag --selector=app==app-name | cut -f 1 -d ' ' | sort | grep tag_search_string
+oc get istag --selector=app==app-name | cut -f 1 -d ' ' | sort | grep tag_search_string | xargs -i oc delete istag/{}
+```
+
 
