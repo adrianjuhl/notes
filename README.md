@@ -22,6 +22,9 @@ oc get istag | grep imagestream_name
 oc get istag --selector=app==app-name | cut -f 1 -d ' ' | sort
 oc get istag --selector=app==app-name | cut -f 1 -d ' ' | sort | grep tag_search_string
 oc get istag --selector=app==app-name | cut -f 1 -d ' ' | sort | grep tag_search_string | xargs -i oc delete istag/{}
+
+When the imagestream doesn't have a label that can be used for the selector, use:
+oc get istag | grep 'app-name:' | cut -f 1 -d ' ' | sort | grep tag_search_string | xargs -i oc delete istag/{}
 ```
 
 
