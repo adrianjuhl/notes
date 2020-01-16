@@ -14,6 +14,13 @@ Search for a particular string in all the git repos under the current directory:
 find . -name .git -type d -prune -exec bash -c "cd '{}/..' && pwd && git grep search_string \$(git rev-list --all)" \;
 ```
 
+Find image tag references:
+```
+oc describe all --namespace=namespaceName | grep Image: | grep "docker-registry" | awk '{print $2}' | sort | uniq -c
+OR
+oc describe all --selector=app=appName --namespace=namespaceName | grep Image: | grep "docker-registry" | awk '{print $2}' | sort | uniq -c
+```
+
 Delete old openshift istag values:
 
 ```
