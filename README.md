@@ -35,3 +35,12 @@ oc get istag | grep 'app-name:' | cut -f 1 -d ' ' | sort | grep tag_search_strin
 ```
 
 
+# Monitor orientations
+Inverted laptop with normal others:
+
+    xrandr --output eDP-1 --rotate inverted --output DP-2-1 --rotate normal --output DP-2-2 --rotate normal
+
+All normal (restore to default):
+
+    xrandr --output eDP-1 --rotate normal --output DP-2-1 --rotate normal --output DP-2-2 --rotate normal
+
