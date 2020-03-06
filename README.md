@@ -44,3 +44,22 @@ All normal (restore to default):
 
     xrandr --output eDP-1 --rotate normal --output DP-2-1 --rotate normal --output DP-2-2 --rotate normal
 
+
+# Laptop Network Dropouts
+Keep an eye on inotify watches:
+lsof | grep inotify | wc -l
+
+Current max_user_watches:
+cat /proc/sys/fs/inotify/max_user_watches
+
+Do they correlate?
+
+To increase the limit temporarily:
+echo 16384 | sudo tee /proc/sys/fs/inotify/max_user_watches
+(does this work?)
+
+See also:
+https://askubuntu.com/questions/828779/failed-to-add-run-systemd-ask-password-to-directory-watch-no-space-left-on-dev
+https://askubuntu.com/questions/770374/user-limit-of-inotify-watches-reached-on-ubuntu-16-04
+https://unix.stackexchange.com/questions/285529/internet-stops-working-failed-to-add-run-systemd-ask-password-to-directory-wa
+
