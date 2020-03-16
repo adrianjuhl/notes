@@ -63,3 +63,12 @@ https://askubuntu.com/questions/828779/failed-to-add-run-systemd-ask-password-to
 https://askubuntu.com/questions/770374/user-limit-of-inotify-watches-reached-on-ubuntu-16-04
 https://unix.stackexchange.com/questions/285529/internet-stops-working-failed-to-add-run-systemd-ask-password-to-directory-wa
 
+# Outlook
+
+## Decline a meeting but keep it displayed in calendar
+1. Decline the meeting so the person knows you aren't attending
+1. Go to the deleted items folder and open the invite
+1. Click "Tentative" and then "Do not send a response"
+1. Open the appointment and then change your time to "Free"
+See https://superuser.com/a/387347
+
