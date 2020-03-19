@@ -38,7 +38,17 @@ oc get istag | grep 'app-name:' | cut -f 1 -d ' ' | sort | grep tag_search_strin
 # Monitor orientations
 Setup A
 
-    xrandr --output eDP-1 --mode 1920x1080 --pos 0x1920 --rotate normal --scale 1x1 --output DP-1-1 --mode 1920x1080 --pos 0x0 --scale 1x1 --rotate left --output DP-1-2 --mode 1920x1080 --pos 1080x0 --scale 1x1 --rotate left
+    xrandr \
+        --output DP-1-1 --mode 1920x1080 --pos 0x0      --scale 1x1 --rotate left \
+        --output DP-1-2 --mode 1920x1080 --pos 1080x0   --scale 1x1 --rotate left \
+        --output DP-1-3 --mode 1920x1200 --pos 2160x280 --scale 1x1 --rotate normal
+
+Setup B
+
+    xrandr \
+      --output eDP-1  --mode 1920x1080 --pos 0x1920 --scale 1x1 --rotate normal \
+      --output DP-1-1 --mode 1920x1080 --pos 0x0    --scale 1x1 --rotate left \
+      --output DP-1-2 --mode 1920x1080 --pos 1080x0 --scale 1x1 --rotate left
 
 Query for display names and settings:
 
