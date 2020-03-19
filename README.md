@@ -36,12 +36,27 @@ oc get istag | grep 'app-name:' | cut -f 1 -d ' ' | sort | grep tag_search_strin
 
 
 # Monitor orientations
-Inverted laptop with normal others:
+Setup A
 
+    xrandr --output eDP-1 --mode 1920x1080 --pos 0x1920 --rotate normal --scale 1x1 --output DP-1-1 --mode 1920x1080 --pos 0x0 --scale 1x1 --rotate left --output DP-1-2 --mode 1920x1080 --pos 1080x0 --scale 1x1 --rotate left
+
+Query for display names and settings:
+
+    xrandr --query
+
+Inverted laptop with normal others (display names can vary):
+
+    xrandr --output eDP-1 --rotate inverted --output DP-1-1 --rotate normal --output DP-1-2 --rotate normal
     xrandr --output eDP-1 --rotate inverted --output DP-2-1 --rotate normal --output DP-2-2 --rotate normal
 
-All normal (restore to default):
+Inverted laptop with left rotated others (display names can vary):
 
+    xrandr --output eDP-1 --rotate inverted --output DP-1-1 --rotate left --output DP-1-2 --rotate left
+    xrandr --output eDP-1 --rotate inverted --output DP-2-1 --rotate left --output DP-2-2 --rotate left
+
+All normal (restore to default) (display names can vary):
+
+    xrandr --output eDP-1 --rotate normal --output DP-1-1 --rotate normal --output DP-1-2 --rotate normal
     xrandr --output eDP-1 --rotate normal --output DP-2-1 --rotate normal --output DP-2-2 --rotate normal
 
 
