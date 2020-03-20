@@ -111,3 +111,10 @@ https://unix.stackexchange.com/questions/285529/internet-stops-working-failed-to
 
 See https://superuser.com/a/387347
 
+# Maven
+
+clean recursively:
+```
+find . -type d -name "target" | xargs -I{} find '{}/..' -type f -maxdepth 1 -name 'pom.xml' | xargs -I{} mvn clean -f '{}'
+```
+
