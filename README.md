@@ -36,7 +36,7 @@ oc get istag | grep 'app-name:' | cut -f 1 -d ' ' | sort | grep tag_search_strin
 
 
 # Monitor orientations
-Setup - portait, portrait, landscape
+Setup - portrait, portrait, landscape
 
     xrandr \
         --output DP-1-1 --mode 1920x1080 --pos 0x0      --scale 1x1 --rotate left \
@@ -48,7 +48,7 @@ Setup - portait, portrait, landscape
         --output DP-2-2 --mode 1920x1080 --pos 1080x0   --scale 1x1 --rotate left \
         --output DP-2-3 --mode 1920x1200 --pos 2160x280 --scale 1x1 --rotate normal
 
-Setup - portait, landscape, landscape
+Setup - portrait, landscape, landscape
 
     xrandr \
         --output DP-2-1 --mode 1920x1080 --pos 0x0      --scale 1x1 --rotate left \
@@ -58,11 +58,18 @@ Setup - portait, landscape, landscape
 Setup - landscape, landscape, landscape
 
     xrandr \
-        --output DP-2-1 --mode 1920x1080 --pos 0x0      --scale 1x1 --rotate normal \
+        --output DP-2-1 --mode 1920x1080 --pos 0x120    --scale 1x1 --rotate normal \
         --output DP-2-2 --mode 1920x1080 --pos 1920x120 --scale 1x1 --rotate normal \
         --output DP-2-3 --mode 1920x1200 --pos 3840x0   --scale 1x1 --rotate normal
 
-Setup C
+Setup - landscape, landscape
+
+    xrandr \
+        --output DP-2-1 --mode 1920x1080 --pos 0x0    --scale 1x1 --rotate normal \
+        --output DP-2-2 --mode 1920x1080 --pos 1920x0 --scale 1x1 --rotate normal \
+        --output DP-2-3 --off
+
+Setup - inbuilt, portrait, portrait
 
     xrandr \
       --output eDP-1  --mode 1920x1080 --pos 0x1920 --scale 1x1 --rotate normal \
