@@ -76,6 +76,14 @@ Setup - inbuilt, portrait, portrait
       --output DP-1-1 --mode 1920x1080 --pos 0x0    --scale 1x1 --rotate left \
       --output DP-1-2 --mode 1920x1080 --pos 1080x0 --scale 1x1 --rotate left
 
+Setup - inbuilt, landscape, landscape
+
+    xrandr \
+      --output eDP-1  --mode 1920x1080 --pos 1920x1200 --scale 1x1 --rotate normal \
+      --output DP-2-1 --mode 1920x1080 --pos 0x0       --scale 1x1 --rotate normal \
+      --output DP-2-2 --off \
+      --output DP-2-3 --mode 1920x1200 --pos 1920x0    --scale 1x1 --rotate normal --primary
+
 Query for display names and settings:
 
     xrandr --query
