@@ -112,6 +112,7 @@ Current max_user_watches:
 cat /proc/sys/fs/inotify/max_user_watches
 
 Do they correlate?
+Answer (12/04/2020): No, (results were 2948 and 8192) but wifi returned after running the command below.
 
 To increase the limit temporarily:
 echo 16384 | sudo tee /proc/sys/fs/inotify/max_user_watches
