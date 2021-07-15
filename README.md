@@ -120,6 +120,9 @@ To increase the limit temporarily:
 echo 16384 | sudo tee /proc/sys/fs/inotify/max_user_watches
 (does this work?)
 
+To track these values:
+while true; do (echo && date && echo -n "inotify count: " && lsof | grep inotify | wc -l && echo -n "max_user_watchers: " && cat /proc/sys/fs/inotify/max_user_watches) | tee --append .gitignored/network_dropout_data; sleep 60; done
+
 See also:
 https://askubuntu.com/questions/828779/failed-to-add-run-systemd-ask-password-to-directory-watch-no-space-left-on-dev
 https://askubuntu.com/questions/770374/user-limit-of-inotify-watches-reached-on-ubuntu-16-04
