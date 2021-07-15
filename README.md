@@ -111,6 +111,8 @@ lsof | grep inotify | wc -l
 Current max_user_watches:
 cat /proc/sys/fs/inotify/max_user_watches
 
+echo -n "inotify count: " && lsof | grep inotify | wc -l && echo -n "max_user_watchers: " && cat /proc/sys/fs/inotify/max_user_watches
+
 Do they correlate?
 Answer (12/04/2020): No, (results were 2948 and 8192) but wifi returned after running the command below.
 
