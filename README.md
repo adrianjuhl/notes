@@ -146,3 +146,24 @@ clean recursively:
 find . -type d -name "target" | xargs -I{} find '{}/..' -type f -maxdepth 1 -name 'pom.xml' | xargs -I{} mvn clean -f '{}'
 ```
 
+# Camel
+
+A route that runs once, and in this example to also stop the application (used for testing):
+```
+    from("timer://runOnce?repeatCount=1&delay=5000")
+      .process(new Processor() {
+        @Override
+        public void process(Exchange exchange) throws Exception {
+          System.exit(0);
+        }
+      })
+    ;
+```
+Then build and initial run timed with:
+```
+$ time ./bin/run_app_local.sh
+```
+
+
+
+
